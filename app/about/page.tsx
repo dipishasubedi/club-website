@@ -1,55 +1,26 @@
 "use client";
 import { Heart } from "lucide-react";
+
 export default function About() {
   const officers = [
-    {
-      name: "Suhani Garg",
-      img: "/officers/alice.jpeg",
-      link: "/officers/alice",
-    },
+    { name: "Suhani Garg", img: "/officers/alice.jpeg" },
     { name: "Arya Reddy", img: "/officers/bob.jpeg", link: "/officers/bob" },
-    {
-      name: "Minati Divakar",
-      img: "/officers/charlie.jpeg",
-      link: "/officers/charlie",
-    },
-    { name: "Pal Shs", img: "/officers/diana.jpeg", link: "/officers/diana" },
-    {
-      name: "Ramini Paruchuri",
-      img: "/officers/ethan.jpeg",
-      link: "/officers/ethan",
-    },
-    {
-      name: "Yash Chavali",
-      img: "/officers/fiona.jpeg",
-      link: "/officers/fiona",
-    },
-    {
-      name: "Dipisha Subedi",
-      img: "/officers/george.jpeg",
-      link: "/officers/george",
-    },
-    {
-      name: "Meerub Rana",
-      img: "/officers/hannah.jpeg",
-      link: "/officers/hannah",
-    },
+    { name: "Minati Divakar", img: "/officers/charlie.jpeg" },
+    { name: "Pal Sh", img: "/officers/diana.jpeg", link: "/officers/diana" },
+    { name: "Ramini Paruchuri", img: "/officers/ethan.jpeg" },
+    { name: "Yash Chavali", img: "/officers/fiona.jpeg" },
+    { name: "Dipisha Subedi", img: "/officers/george.jpeg" },
+    { name: "Meerub Rana", img: "/officers/hannah.jpeg" },
   ];
 
   return (
-    <main className="flex flex-col min-h-screen bg-[#0b0017] text-white pt-15">
+    <main className="relative flex flex-col min-h-screen text-white">
       {/* 🖼 Hero Section */}
       <section
         className="relative w-full h-[40vh] bg-cover bg-center"
         style={{ backgroundImage: "url('backgroundPic.jpeg')" }}
       >
-        {/* Dark overlay */}
-        <div className="absolute inset-0 "></div>
-
-        {/* Bottom fade overlay */}
         <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-[#0b0017] to-transparent"></div>
-
-        {/* Title */}
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-5xl font-extrabold text-white text-center">
             Our Team
@@ -57,10 +28,16 @@ export default function About() {
         </div>
       </section>
 
-      {/* 🌊 Floating Officer Cells Section */}
-      <section className="relative flex flex-col justify-center items-center py-20 gap-20">
+      {/* 🌌 Officers Section with Constellation Background */}
+      <section
+        className="relative flex flex-col justify-center items-center py-20 gap-20 bg-cover bg-center"
+        style={{ backgroundImage: "url('/constellation.jpg')" }}
+      >
+        {/* Optional overlay for contrast */}
+        <div className="absolute inset-0 bg-black/30"></div>
+
         {/* Top Row */}
-        <div className="flex justify-center items-center gap-12">
+        <div className="flex justify-center items-center gap-12 flex-wrap relative z-10">
           {officers.slice(0, 4).map((officer, idx) => (
             <a
               key={idx}
@@ -77,7 +54,7 @@ export default function About() {
                 alt={officer.name}
                 className="relative w-full h-full object-cover rounded-full border-2 border-white/20"
               />
-              <div className="absolute bottom-2 w-full text-center text-white font-semibold text-sm backdrop-blur-sm bg-white/10 rounded-md py-1 font-[var(--font-poppins)]">
+              <div className="absolute bottom-2 w-full text-center text-white font-semibold text-sm backdrop-blur-sm bg-white/10 rounded-md py-1">
                 {officer.name}
               </div>
             </a>
@@ -85,7 +62,7 @@ export default function About() {
         </div>
 
         {/* Bottom Row */}
-        <div className="flex justify-center items-center gap-12">
+        <div className="flex justify-center items-center gap-12 flex-wrap relative z-10">
           {officers.slice(4, 8).map((officer, idx) => (
             <a
               key={idx}
@@ -110,13 +87,14 @@ export default function About() {
         </div>
       </section>
 
+      {/* Footer Hearts */}
       <section className="w-full py-1 bg-purple-100 flex justify-center items-center gap-6">
         {Array.from({ length: 25 }).map((_, idx) => (
           <Heart
             key={idx}
             size={32}
-            fill="#b388ff" // solid fill
-            stroke="none" // remove outline
+            fill="#b388ff"
+            stroke="none"
             className="animate-bounce-slow"
           />
         ))}
@@ -135,7 +113,6 @@ export default function About() {
             transform: translateY(0px);
           }
         }
-
         @keyframes glow {
           0%,
           100% {
@@ -145,18 +122,19 @@ export default function About() {
             box-shadow: 0 0 30px #9b59b6, 0 0 60px #6c5ce7;
           }
         }
-
         .animate-floating {
           animation-name: floating;
           animation-timing-function: ease-in-out;
           animation-iteration-count: infinite;
         }
-
         .animate-glow {
           animation-name: glow;
           animation-timing-function: ease-in-out;
           animation-iteration-count: infinite;
           animation-direction: alternate;
+        }
+        .animate-bounce-slow {
+          animation: bounce 2s infinite;
         }
       `}</style>
     </main>

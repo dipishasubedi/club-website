@@ -6,7 +6,7 @@ export default function About() {
     { name: "Suhani Garg", img: "/officers/alice.jpeg" },
     { name: "Arya Reddy", img: "/officers/bob.jpeg", link: "/officers/bob" },
     { name: "Minati Divakar", img: "/officers/charlie.jpeg" },
-    { name: "Pal Sh", img: "/officers/diana.jpeg", link: "/officers/diana" },
+    { name: "Pal Sh", img: "/officers/Pal.jpg", link: "/officers/diana" },
     { name: "Ramini Paruchuri", img: "/officers/ethan.jpeg" },
     { name: "Yash Chavali", img: "/officers/fiona.jpeg" },
     { name: "Dipisha Subedi", img: "/officers/george.jpeg" },
@@ -41,7 +41,6 @@ export default function About() {
           {officers.slice(0, 4).map((officer, idx) => (
             <a
               key={idx}
-              href={officer.link}
               className={`relative w-60 h-60 rounded-full overflow-hidden shadow-xl flex items-center justify-center animate-floating`}
               style={{
                 animationDuration: `${6 + idx * 0.5}s`,
@@ -54,7 +53,7 @@ export default function About() {
                 alt={officer.name}
                 className="relative w-full h-full object-cover rounded-full border-2 border-white/20"
               />
-              <div className="absolute bottom-2 w-full text-center text-white font-semibold text-sm backdrop-blur-sm bg-white/10 rounded-md py-1">
+              <div className="absolute bottom-2 w-full text-center text-white font-semibold text-sm backdrop-blur-sm bg-purple-800 rounded-md py-1">
                 {officer.name}
               </div>
             </a>
@@ -66,7 +65,6 @@ export default function About() {
           {officers.slice(4, 8).map((officer, idx) => (
             <a
               key={idx}
-              href={officer.link}
               className={`relative w-60 h-60 rounded-full overflow-hidden shadow-xl flex items-center justify-center animate-floating`}
               style={{
                 animationDuration: `${6 + idx * 0.5}s`,
@@ -79,7 +77,7 @@ export default function About() {
                 alt={officer.name}
                 className="relative w-full h-full object-cover rounded-full border-2 border-white/20"
               />
-              <div className="absolute bottom-2 w-full text-center text-white font-semibold text-sm backdrop-blur-sm bg-white/10 rounded-md py-1">
+              <div className="absolute bottom-2 w-full text-center text-white font-semibold text-sm backdrop-blur-sm bg-purple-800 rounded-md py-1">
                 {officer.name}
               </div>
             </a>

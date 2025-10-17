@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -15,13 +16,16 @@ export default function Navbar() {
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-[#0b0017]/95 backdrop-blur-md text-white ">
-      <div className="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Club Name */}
-        <Link
-          href="/"
-          className="text-xl md:text-2xl font-bold whitespace-nowrap"
-        >
-          TJ Cancer Research Society
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/CRS1.png"
+            alt="TJ Cancer Research Society Logo"
+            width={35} // adjust as needed
+            height={35} // adjust as needed
+            className="object-contain"
+          />
         </Link>
 
         {/* Links */}

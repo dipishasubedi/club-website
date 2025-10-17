@@ -1,14 +1,19 @@
-export default function ContactPage() {
+"use client";
+
+export default function Leaderboard() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-white text-gray-800 px-6 py-16">
-      <h1 className="text-4xl font-bold text-blue-800 mb-4">Contact Us</h1>
-      <p className="text-gray-600">
-        Have questions or want to get involved? Reach out to us at{" "}
-        <span className="font-medium text-blue-700">
-          cancerresearchclub@email.com
-        </span>
-        .
-      </p>
+    <main className="relative flex flex-col min-h-screen text-white">
+      <section
+        className="relative w-full h-[40vh] bg-cover bg-center"
+        style={{ backgroundImage: "url('backgroundPic.jpeg')" }}
+      >
+        <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-[#0b0017] to-transparent"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-5xl font-extrabold text-white text-center">
+            Leaderboard{" "}
+          </h1>
+        </div>
+      </section>
     </main>
   );
 }

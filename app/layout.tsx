@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "TJ Cancer Research Society",
   description:
     "Passionate student community exploring breakthroughs in cancer research.",
+  icons: {
+    icon: "/crs.png",
+  },
 };
 
 export default function RootLayout({

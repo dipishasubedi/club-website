@@ -18,6 +18,7 @@ export default function About() {
       className="relative flex flex-col min-h-screen text-white"
       style={{ fontFamily: "var(--font-poppins)" }}
     >
+      {/* Hero Section */}
       <section
         className="relative w-full h-[40vh] bg-cover bg-center"
         style={{ backgroundImage: "url('backgroundPic.jpeg')" }}
@@ -25,24 +26,25 @@ export default function About() {
         <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-[#0b0017] to-transparent"></div>
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-5xl font-extrabold text-white text-center">
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white text-center">
             Our Team
           </h1>
         </div>
       </section>
 
+      {/* Officers Section */}
       <section
-        className="relative flex flex-col justify-center items-center py-20 gap-20 bg-cover bg-center"
+        className="relative flex flex-col justify-center items-center py-16 gap-12 bg-cover bg-center"
         style={{ backgroundImage: "url('/constellation.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/30"></div>
 
-        <div className="flex justify-center items-center gap-12 flex-wrap relative z-10">
-          {officers.slice(0, 4).map((officer, idx) => (
+        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-8 relative z-10">
+          {officers.map((officer, idx) => (
             <a
               key={idx}
-              className="relative w-60 h-60 rounded-full overflow-hidden shadow-xl flex items-center justify-center animate-floating"
+              className="relative w-40 h-40 sm:w-60 sm:h-60 rounded-full overflow-hidden shadow-xl flex items-center justify-center animate-floating"
               style={{
                 animationDuration: `${6 + idx * 0.5}s`,
                 animationDelay: `${idx * 0.3}s`,
@@ -54,30 +56,7 @@ export default function About() {
                 alt={officer.name}
                 className="relative w-full h-full object-cover rounded-full border-2 border-white/20"
               />
-              <div className="absolute bottom-2 w-full text-center text-white font-semibold text-sm backdrop-blur-sm bg-purple-800 rounded-md py-1">
-                {officer.name}
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <div className="flex justify-center items-center gap-12 flex-wrap relative z-10">
-          {officers.slice(4, 8).map((officer, idx) => (
-            <a
-              key={idx}
-              className="relative w-60 h-60 rounded-full overflow-hidden shadow-xl flex items-center justify-center animate-floating"
-              style={{
-                animationDuration: `${6 + idx * 0.5}s`,
-                animationDelay: `${idx * 0.3}s`,
-              }}
-            >
-              <div className="absolute inset-0 rounded-full bg-purple-800/30 blur-xl animate-glow"></div>
-              <img
-                src={officer.img}
-                alt={officer.name}
-                className="relative w-full h-full object-cover rounded-full border-2 border-white/20"
-              />
-              <div className="absolute bottom-2 w-full text-center text-white font-semibold text-sm backdrop-blur-sm bg-purple-800 rounded-md py-1">
+              <div className="absolute bottom-1 w-full text-center text-white font-semibold text-xs sm:text-sm backdrop-blur-sm bg-purple-800 rounded-md py-1">
                 {officer.name}
               </div>
             </a>
@@ -85,18 +64,20 @@ export default function About() {
         </div>
       </section>
 
-      <section className="w-full py-1 bg-purple-100 flex justify-center items-center gap-6">
+      {/* Hearts Section */}
+      <section className="w-full py-2 bg-purple-100 flex justify-start sm:justify-center items-center gap-3 overflow-x-auto px-4">
         {Array.from({ length: 25 }).map((_, idx) => (
           <Heart
             key={idx}
-            size={32}
+            size={24}
             fill="#b388ff"
             stroke="none"
-            className="animate-bounce-slow"
+            className="animate-bounce-slow flex-shrink-0"
           />
         ))}
       </section>
 
+      {/* Animations */}
       <style jsx>{`
         @keyframes floating {
           0% {
@@ -116,6 +97,15 @@ export default function About() {
           }
           50% {
             box-shadow: 0 0 30px #9b59b6, 0 0 60px #6c5ce7;
+          }
+        }
+        @keyframes bounce {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
           }
         }
         .animate-floating {

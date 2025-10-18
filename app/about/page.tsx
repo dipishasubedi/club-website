@@ -14,13 +14,17 @@ export default function About() {
   ];
 
   return (
-    <main className="relative flex flex-col min-h-screen text-white">
-      {/* 🖼 Hero Section */}
+    <main
+      className="relative flex flex-col min-h-screen text-white"
+      style={{ fontFamily: "var(--font-poppins)" }}
+    >
       <section
         className="relative w-full h-[40vh] bg-cover bg-center"
         style={{ backgroundImage: "url('backgroundPic.jpeg')" }}
       >
         <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-[#0b0017] to-transparent"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
+
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-5xl font-extrabold text-white text-center">
             Our Team
@@ -28,20 +32,17 @@ export default function About() {
         </div>
       </section>
 
-      {/* 🌌 Officers Section with Constellation Background */}
       <section
         className="relative flex flex-col justify-center items-center py-20 gap-20 bg-cover bg-center"
         style={{ backgroundImage: "url('/constellation.jpg')" }}
       >
-        {/* Optional overlay for contrast */}
         <div className="absolute inset-0 bg-black/30"></div>
 
-        {/* Top Row */}
         <div className="flex justify-center items-center gap-12 flex-wrap relative z-10">
           {officers.slice(0, 4).map((officer, idx) => (
             <a
               key={idx}
-              className={`relative w-60 h-60 rounded-full overflow-hidden shadow-xl flex items-center justify-center animate-floating`}
+              className="relative w-60 h-60 rounded-full overflow-hidden shadow-xl flex items-center justify-center animate-floating"
               style={{
                 animationDuration: `${6 + idx * 0.5}s`,
                 animationDelay: `${idx * 0.3}s`,
@@ -60,12 +61,11 @@ export default function About() {
           ))}
         </div>
 
-        {/* Bottom Row */}
         <div className="flex justify-center items-center gap-12 flex-wrap relative z-10">
           {officers.slice(4, 8).map((officer, idx) => (
             <a
               key={idx}
-              className={`relative w-60 h-60 rounded-full overflow-hidden shadow-xl flex items-center justify-center animate-floating`}
+              className="relative w-60 h-60 rounded-full overflow-hidden shadow-xl flex items-center justify-center animate-floating"
               style={{
                 animationDuration: `${6 + idx * 0.5}s`,
                 animationDelay: `${idx * 0.3}s`,
@@ -85,7 +85,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Footer Hearts */}
       <section className="w-full py-1 bg-purple-100 flex justify-center items-center gap-6">
         {Array.from({ length: 25 }).map((_, idx) => (
           <Heart
@@ -98,7 +97,6 @@ export default function About() {
         ))}
       </section>
 
-      {/* Tailwind + CSS animations */}
       <style jsx>{`
         @keyframes floating {
           0% {

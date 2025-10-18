@@ -8,16 +8,14 @@ export default function Navbar() {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/events", label: "Events" },
     { href: "/about", label: "Our Team" },
 
-    { href: "/leaderboard", label: "Leaderboard" },
+    { href: "/leaderboard", label: "Fundraising Leaderboard" },
   ];
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-[#0b0017]/95 backdrop-blur-md text-white ">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        {/* Club Name */}
         <Link href="/" className="flex items-center">
           <Image
             src="/CRS1.png"
@@ -28,8 +26,7 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Links */}
-        <div className="flex space-x-8 text-gray-200 font-medium font-semibold">
+        <div className="flex space-x-8 text-gray-200  font-semibold">
           {links.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -41,7 +38,6 @@ export default function Navbar() {
                 }`}
               >
                 {link.label}
-                {/* Underline for active link */}
                 {isActive && (
                   <span className="absolute left-0 bottom-0 w-full h-[5px] bg-purple-400 rounded-full"></span>
                 )}

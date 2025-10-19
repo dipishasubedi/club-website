@@ -7,7 +7,7 @@ export default function About() {
     { name: "Arya Reddy", img: "/officers/bob.jpeg", link: "/officers/bob" },
     { name: "Minati Divakar", img: "/officers/charlie.jpeg" },
     { name: "Pal Sh", img: "/officers/Pal.jpg", link: "/officers/diana" },
-    { name: "Ramini Paruchuri", img: "/officers/ethan.jpeg" },
+    { name: "Ramini Paruchuri", img: "/officers/Ramini.jpg" },
     { name: "Yash Chavali", img: "/officers/fiona.jpeg" },
     { name: "Dipisha Subedi", img: "/officers/george.jpeg" },
     { name: "Meerub Rana", img: "/officers/hannah.jpeg" },
